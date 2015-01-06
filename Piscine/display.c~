@@ -1,0 +1,46 @@
+/*
+** display.c for  in /home/bigaig_a/battle_for_Midgard/quete1
+** 
+** Made by BIGAIGNON Axel
+** Login   <bigaig_a@etna-alternance.net>
+** 
+** Started on  Thu Oct 30 22:09:46 2014 BIGAIGNON Axel
+** Last update Fri Oct 31 22:54:56 2014 BIGAIGNON Axel
+*/
+
+#include <unistd.h>
+#include <stdlib.h>
+
+void my_putstr(char *str);
+
+void my_putchar(char c)
+{
+  write(1, &c, 1);
+}
+
+int my_strcmp(char *s1, char *s2);
+
+char *check_name(int ac, char **av)
+{
+  if( ac >= 2)
+    {
+      if (my_strcmp(av[1], "-n") == 0)
+	return (av[2]);
+      else
+	my_putstr("USAGE: <-n> <Player name>");
+    }
+  return (0);
+}
+
+int main(int ac, char **av)
+{
+  my_putchar(12);
+  my_putchar('o');
+  my_putchar('k');
+  my_putchar('\n');
+  
+  check_name(ac, av);
+  my_putchar('\n');
+  return (0);
+}
+// e>
